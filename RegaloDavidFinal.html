@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz primer mes!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://i.imgur.com/PFAm2rh.jpeg'); /* Cambia este enlace por la URL de tu imagen */
+            background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
+            background-position: center; /* Centra la imagen de fondo */
+            color: rgb(255, 255, 255); /* Cambia el color del texto para que sea visible sobre el fondo */
+        }
+
+        /* Ocultamos la carta inicialmente */
+        #carta {
+            display: none;
+            margin-top: 20px;
+            background-color: #ff9d92;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-out forwards;
+        }
+
+        /* Estilos del botón con corazones */
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Corazones que flotan */
+        button:before, button:after {
+            content: "❤️";
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: float 1.5s ease-in-out infinite;
+        }
+
+        button:before {
+            left: -30px;
+            animation-delay: 0.5s;
+        }
+
+        button:after {
+            right: -30px;
+        }
+
+        /* Galería de fotos */
+        .galeria {
+            margin-top: 40px;
+            display: flex; /* Usar flexbox para la galería */
+            flex-direction: column; /* Colocar recuerdos en columna */
+            align-items: center; /* Centrar los elementos */
+        }
+
+        /* Estilo de cada recuerdo */
+        .recuerdo {
+            margin-bottom: 20px;
+            text-align: center; /* Centra el texto y las imágenes */
+        }
+
+        /* Estilo de las imágenes */
+        .recuerdo img {
+            width: 150px; /* Ajusta el ancho a 150px */
+            height: auto; /* Mantiene la proporción */
+            margin: 10px;
+            border-radius: 10px;
+            display: none; /* Oculta las imágenes inicialmente */
+        }
+
+        /* Estilo para las imágenes del cuarto recuerdo */
+        #recuerdo4 img {
+            width: 100px; /* Ajusta el ancho a 100px */
+            height: auto; /* Mantiene la proporción */
+            margin: 5px;
+        }
+
+        /* Animación de la carta */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos de la descripción */
+        .descripcion {
+            display: none; /* Ocultamos la descripción inicialmente */
+            margin-top: 10px;
+        }
+
+     /* Estilos de la sección de metas */
+     #metas {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(255, 154, 197, 0.8); /* Fondo semi-transparente */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Galería de metas */
+        .metas-galeria {
+            display: flex; /* Usar flexbox para la galería */
+            flex-direction: row; /* Colocar metas en fila */
+            justify-content: center; /* Centrar los elementos */
+            flex-wrap: wrap; /* Permitir que se envuelvan en varias filas si es necesario */
+        }
+
+        /* Estilo de cada meta */
+        .meta {
+            margin: 10px;
+            background-color: rgba(255, 76, 192, 0.8); /* Fondo blanco semi-transparente */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra el contenido de cada meta */
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Reproductor de audio -->
+     <audio controls autoplay loop>
+        <source src="https://www.dropbox.com/scl/fi/4dcpmmznyyj5iqrcoyrlo/Christina-Perri-A-Thousand-Years.mp3?rlkey=1ruwxv0pqv90wghjalzsujoow&st=lk8rztmz&raw=1" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <h1>¡Hola mi dragoncito!</h1>
+    <p>Haz clic en el botón para ver tu cartita especial...</p>
+    <button onclick="mostrarCarta()">❤️ Haz clic aquí ❤️</button>
+
+    <div id="carta">
+        <h2>Para mi amado David,</h2>
+        <p>Mi amor, parece increíble que ya estemos celebrando nuestro primer mes juntos. No hay palabras suficientes para describir lo agradecida que estoy por haberte encontrado y tenerte en mi vida. Cada día contigo es una bendición, y siento que hemos construido algo hermoso y único en tan poco tiempo.</p>
+        <p>Desde el primer momento en que nos conocimos, supe que había algo especial en ti. Me haces sentir amada, cuidada y comprendida, algo que no había sentido con tanta intensidad antes. Me haces sonreír con solo hablarme, y tu apoyo incondicional me da fuerzas para enfrentar cualquier desafío.</p>
+        <p>Este mes ha estado lleno de momentos inolvidables, y aunque no siempre estemos físicamente juntos, siento que nuestra conexión trasciende cualquier distancia. Nos hemos casado virtualmente, algo que para muchos podría parecer poco común, pero para mí significa que estamos unidos en un nivel más profundo, donde nuestras almas se han encontrado.</p>
+        <p>Nuestra pequeña Kaxy es también una prueba de ese amor tan inmenso. Ella es una parte importante de nosotros, de esta pequeña familia que hemos formado. Cada vez que pienso en los momentos que compartimos, en los sueños que construimos juntos, me lleno de alegría y esperanza por el futuro que nos espera.</p>
+        <p>David, te amo con todo mi ser. Cada palabra, cada gesto tuyo me hace sentir más cerca de ti, y me emociona saber que este es solo el comienzo de una vida juntos. Siempre estaré a tu lado, en las buenas y en las malas, apoyándote y amándote incondicionalmente.</p>
+        <p>No importa qué desafíos enfrente el futuro, sé que mientras estemos juntos, podremos superarlo todo. Eres mi compañero, mi confidente, mi niño dragoncito, y el amor de mi vida. ¡Feliz primer mes, mi amor! Que este sea el primero de muchos más por venir.</p>
+        <p>Te amo más de lo que las palabras pueden expresar, y siempre lo haré.</p>
+        <p>No se si lo recuerdas, pero comenzamos a hablar el día 28 de Junio que fue exactamente cuando yo leí tu mensaje, desde ese día no dejaste de comentar en mis post y hablarme cada vez más y más, poco a poco fuiste ganandte mi confianza, parece como si el destino nos hubiera juntado apróposito.</p>
+        <p>El simple hecho de que quieras venir a verme pronto y ya estas planeando eso me hace sentir muy feliz, te prometo que te amo demasiado eres el mejor novio del mundo, te adoro mi niño nunca debes rendirte, recuérdalo para mí eres un gran artista y un chico increíble que se merece lo mejor del mundo.</p>
+        <p>Tu me demostraste que el amor verdadero existe y que no importa la distancia, importa la confianza, la constancia, y el cariño que nos demos y todo eso en nuestra relación está bastante bien 💖</p>
+        <p>Ya no solo amo tu arte, tus dibujos hermosos y los fandubs con voz de Neuvillette que me haces, también amo la manera en la que te expresas cuando escribes y lo cariñoso que eres, te amo muchísimo mi vida.</p>
+        <p>Con todo mi amor,</p>
+        <p>Tu esposa y compañera de vida,</p>
+        <p>Sofía</p>
+    </div>
+    
+    <h2>Recuerdos</h2>
+    <div class="galeria">
+        <!-- Primer recuerdo -->
+        <div class="recuerdo">
+            <h3>Como empezó todo...</h3>
+            <button onclick="mostrarFoto('foto1', 'descripcion1')">Ver recuerdo</button>
+            <img id="foto1" src="https://i.imgur.com/p62er0I.jpeg" alt="El día Jueves 27 de Junio me escribiste por primera vez" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion1" class="descripcion">El día Jueves 27 de Junio me escribiste por primera vez</p>
+        </div>
+    
+        <!-- Segundo recuerdo -->
+        <div class="recuerdo">
+            <h3>Tu primer dibujo hecho para mí 💗🎁</h3>
+            <button onclick="mostrarFoto('foto2', 'descripcion2')">Ver recuerdo</button>
+            <img id="foto2" src="https://i.imgur.com/OUm5keG.jpeg" alt="Tu primer dibujo para mí" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion2" class="descripcion">El día Domingo 21 de Julio, me hiciste mi primer dibujo</p>
+        </div>
+    
+        <!-- Tercer recuerdo -->
+        <div class="recuerdo">
+            <h3>Mis primeros stickers</h3>
+            <button onclick="mostrarFoto('foto3', 'descripcion3')">Ver recuerdo</button>
+            <img id="foto3" src="https://i.imgur.com/OiSQADv.jpeg" alt="Tus primeros stickers" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion3" class="descripcion">También ese mismo día como regalo me hiciste los primeros stickers para mi canal de covers 🎵</p>
+        </div>
+    
+        <!-- Cuarto recuerdo -->
+        <div class="recuerdo">
+            <h3>Cuando empezamos a agarrar confianza 💗</h3>
+            <button onclick="mostrarRecuerdo4()">Ver recuerdo</button>
+            <div id="recuerdo4" style="display:none; margin: 0 auto;"">
+                <img src="https://i.imgur.com/KTemrHy.jpeg" alt="Foto 1">
+                <img src="https://i.imgur.com/usEHbPG.jpeg" alt="Foto 2">
+                <img src="https://i.imgur.com/PIPv7OV.jpeg" alt="Foto 3">
+                <img src="https://i.imgur.com/tv9VDaL.jpeg" alt="Foto 4">
+            </div>
+            <p id="descripcion4" class="descripcion" style="display:none;">El día Jueves 15 de Agosto, por primera vez me hablaste de uno de los problemas que te estaba afectando y poco a poco empezamos a agarrar confianza</p>
+        </div>
+    
+        <!-- Quinto recuerdo -->
+        <div class="recuerdo">
+            <h3>El día en el que me pasaste tu número 💞</h3>
+            <button onclick="mostrarFoto('foto5', 'descripcion5')">Ver recuerdo</button>
+            <img id="foto5" src="https://i.imgur.com/1wSHIiU.jpeg" alt="Tu numero" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion5" class="descripcion">El día 21 de Agosto me pasaste tu número de teléfono y comenzamos a hablar a través de Whatsapp, lo que aumentó la confianza que nos teníamos ❤️‍🩹</p>
+        </div>
+
+          <!-- Sexto recuerdo -->
+          <div class="recuerdo">
+            <h3>Nuestro primer match 💕</h3>
+            <button onclick="mostrarRecuerdo6()">Ver recuerdo</button>
+            <div id="recuerdo6" style="display:none; margin: 0 auto; text-align: center;">
+                <img src="https://i.imgur.com/syx6VYD.jpeg" alt="Foto 1">
+                <img src="https://i.imgur.com/81wku59.jpeg" alt="Foto 2">
+            </div>
+            <p id="descripcion6" class="descripcion" style="display:none;">El día 23 de Agosto nos pusimos nuestro primer Match y comenzamos a tratarnos como pareja, aunque aún no estaba confirmado</p>
+        </div>
+
+        <!-- Septimo recuerdo -->
+        <div class="recuerdo">
+            <h3>El día en el que me deseaste las buenas noches 🌙 </h3>
+            <button onclick="mostrarFoto('foto7', 'descripcion7')">Ver recuerdo</button>
+            <img id="foto7" src="https://i.imgur.com/pX4toQJ.jpeg" alt="Tus buenas noches" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion7" class="descripcion">El día 27 de Agosto me diste las buenas noches por primera vez, poco a poco comenzamos a querernos más y más todavía no eramos pareja, pero si nos tratabamos como una</p>
+        </div>
+
+         <!-- Octavo recuerdo -->
+         <div class="recuerdo">
+            <h3>Nuestro segundo Match 💙 </h3>
+            <button onclick="mostrarFoto('foto8', 'descripcion8')">Ver recuerdo</button>
+            <img id="foto8" src="https://i.imgur.com/5DG0j0L.jpeg" alt="Segundo Match" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion8" class="descripcion">Ese mismo Día nos pusimos nuestro segundo Match ❤️‍🩹</p>
+        </div>
+
+         <!-- Noveno recuerdo -->
+         <div class="recuerdo">
+            <h3>Tu primer audio 💗 </h3>
+            <button onclick="mostrarFoto('foto9', 'descripcion9')">Ver recuerdo</button>
+            <img id="foto9" src="https://i.imgur.com/2ynIqMT.jpeg" alt="Tu voz" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion9" class="descripcion">El día 31 de Agosto me mostraste por primera vez tu voz ❤️</p>
+        </div>
+
+         <!-- Decimo recuerdo -->
+         <div class="recuerdo">
+            <h3>Me cantaste una canción 💛 </h3>
+            <button onclick="mostrarFoto('foto10', 'descripcion10')">Ver recuerdo</button>
+            <img id="foto10" src="https://i.imgur.com/i8JKZS0.jpeg" alt="Tu voz" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+            <p id="descripcion10" class="descripcion">Un día después me pasaste un audio cantándome una canción hermosa 💕</p>
+        </div>
+
+          <!-- Onceavo recuerdo -->
+          <div class="recuerdo">
+            <h3>El día que lo cambió todo... ❤️‍🩹</h3>
+            <button onclick="mostrarRecuerdo11()">Ver recuerdo</button>
+            <div id="recuerdo11" style="display:none; margin: 0 auto; text-align: center;">
+                <img src="https://i.imgur.com/4uTW4Q0.jpeg" alt="Foto 1">
+                <img src="https://i.imgur.com/uh7pVUj.jpeg" alt="Foto 2">
+                <img src="https://i.imgur.com/yGniQwW.jpeg" alt="Foto 3">
+            </div>
+            <p id="descripcion11" class="descripcion" style="display:none;">El día 7 de Septiembre nuestra relación se hizo oficíal fue un día hermoso, me hace muy feliz darme cuenta de que ya ha pasado un mes...</p>
+        </div>
+
+        <!-- doceavo recuerdo -->
+        <div class="recuerdo"></div>
+        <h3>Nuestro tercer Match 💕</h3>
+        <button onclick="mostrarFoto('foto12', 'descripcion12')">Ver recuerdo</button>
+        <img id="foto12" src="https://i.imgur.com/qk84qsU.jpeg" alt="match" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+        <p id="descripcion12" class="descripcion">El 15 de Septiembre nos pusimos nuestro tercer Match, un match bastante hermoso y de loos que más me ha gustado</p>
+    </div>
+
+        <!-- treceavo recuerdo -->
+        <div class="recuerdo"></div>
+        <h3>Nuestra hija</h3>
+        <button onclick="mostrarFoto('foto13', 'descripcion13')">Ver recuerdo</button>
+        <img id="foto13" src="https://i.imgur.com/0nuB7Hu.jpeg" alt="Kaxy" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+        <p id="descripcion13" class="descripcion">Ese mismo día también te hablé de Kaxy por primera vez</p>
+    </div>
+
+     <!-- catorceavo recuerdo -->
+     <div class="recuerdo"></div>
+     <h3>Nuestro cuarto Match</h3>
+     <button onclick="mostrarFoto('foto14', 'descripcion14')">Ver recuerdo</button>
+     <img id="foto14" src="https://i.imgur.com/SFiCiLp.jpeg" alt="match" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+     <p id="descripcion14" class="descripcion">El día 20 de Septiembre nos pusimos nuestro cuarto Match donde yo te estaba dando de comer 🤭 </p>
+ </div>
+
+  <!-- quinceavo recuerdo -->
+  <div class="recuerdo"></div>
+  <h3>El día en el que te presenté a Kaxy</h3>
+  <button onclick="mostrarFoto('foto15', 'descripcion15')">Ver recuerdo</button>
+  <img id="foto15" src="https://i.imgur.com/K1ftNeQ.jpeg" alt="Kaxy" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+<p id="descripcion15" class="descripcion">Ese mismo día te presenté a Kaxy en un grupo familiar 🤭💕 </p>
+</div>
+
+<!-- dieciseisavo recuerdo -->
+<div class="recuerdo"></div>
+<h3>Nuestro quinto Match</h3>
+<button onclick="mostrarFoto('foto16', 'descripcion16')">Ver recuerdo</button>
+<img id="foto16" src="https://i.imgur.com/ucDxL81.jpeg" alt="Match" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+<p id="descripcion16" class="descripcion">El 25 de Septiembre nos pusimos nuestro quinto Match donde yo estaba acostada en tu pecho ❤️‍🩹 </p>
+</div>
+
+<!-- diecisieteavo recuerdo -->
+<div class="recuerdo"></div>
+<h3>Nuestra boda... 🤍</h3>
+<button onclick="mostrarFoto('foto17', 'descripcion17')">Ver recuerdo</button>
+<img id="foto17" src="https://i.imgur.com/Ln1Dx4Z.jpeg" alt="Match" style="display:none; width: 300px; margin: 0 auto; text-align: center;">
+<p id="descripcion17" class="descripcion">El 31 de Septiembre hicimos público que nos habíamos casado virtualmente </p>
+</div>
+</div>
+
+<div id="metas">
+    <h2>Metas que debemos cumplir juntos ❤️‍🩹 </h2>
+    <div class="metas-galeria">
+        <div class="meta">
+            <p>Visitar juntos un lugar que amemos.</p>
+        </div>
+        <div class="meta">
+            <p>Ver una película que ambos disfrutemos.</p>
+        </div>
+        <div class="meta">
+            <p>Cantar juntos.</p>
+        </div>
+        <div class="meta">
+            <p>Ducharnos juntos.</p>
+        </div>
+        <div class="meta">
+            <p>Conseguir la casa de nuestros sueños.</p>
+        </div>
+        <div class="meta">
+            <p>LLegar a vernos en persona.</p>
+        </div>
+            <div class="meta">
+                <p>Comer juntitos.</p>
+            </div>
+            <div class="meta">
+                <p>Llegar a estar un año juntos.</p>
+            </div>
+            <div class="meta">
+                <p>Poder casarnos en persona.</p>
+            </div>
+            <div class="meta">
+                <p>Formar una linda familia.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p style="text-align: center; font-size: 20px; color: #ffffff;">Espero que formemos nuevos recuerdos y que cumplamos todas nuestras metas, aunque esta página web haya llegado a su final, me gustaría decirte que te amo demasiado de verdad, espero que este regalo te haya gustado, estuve 1 semana haciendo esta página y aunque no me quedó perfecta, creo que me ha quedado bastante bonita</p>
+
+
+
+  <script>
+        function mostrarCarta() {
+            document.getElementById("carta").style.display = "block"; // Muestra la carta
+
+        }
+    
+        function mostrarFoto(id, descripcionId) {
+            var foto = document.getElementById(id);
+            var descripcion = document.getElementById(descripcionId);
+            foto.style.display = "block"; // Muestra la foto
+            descripcion.style.display = "block"; // Muestra la descripción
+        }
+    
+        function mostrarRecuerdo4() {
+            var recuerdo4 = document.getElementById("recuerdo4");
+            var descripcion4 = document.getElementById("descripcion4");
+    
+            recuerdo4.style.display = "block"; // Muestra el cuarto recuerdo
+            descripcion4.style.display = "block"; // Muestra la descripción del cuarto recuerdo
+            
+            // Muestra todas las imágenes del cuarto recuerdo
+            var imagenes = recuerdo4.getElementsByTagName("img");
+            for (var i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = "inline-block"; // Asegúrate de que las imágenes estén visibles
+            }
+        }
+
+        function mostrarRecuerdo6() {
+            var recuerdo6 = document.getElementById("recuerdo6");
+            var descripcion6 = document.getElementById("descripcion6");
+    
+            recuerdo6.style.display = "block"; // Muestra el cuarto recuerdo
+            descripcion6.style.display = "block"; // Muestra la descripción del cuarto recuerdo
+            
+            // Muestra todas las imágenes sexto recuerdo
+            var imagenes = recuerdo6.getElementsByTagName("img");
+            for (var i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = "inline-block"; // Asegúrate de que las imágenes estén visibles
+            }
+        }
+
+        function mostrarRecuerdo11() {
+            var recuerdo11 = document.getElementById("recuerdo11");
+            var descripcion11 = document.getElementById("descripcion11");
+    
+            recuerdo11.style.display = "block"; // Muestra el onceavo recuerdo
+            descripcion11.style.display = "block"; // Muestra la descripción del cuarto recuerdo
+            
+            // Muestra todas las imágenes del onceavo recuerdo
+            var imagenes = recuerdo11.getElementsByTagName("img");
+            for (var i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = "inline-block"; // Asegúrate de que las imágenes estén visibles
+            }
+        }
+    </script>
+</body>
+</html>
